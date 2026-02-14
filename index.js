@@ -6,14 +6,17 @@ import path from "path";
 import fs from "fs"; //to protect from error if path not found
 import { exec } from "child_process"; //to execute command//WATCH OUT
 import mongoose from "mongoose";
+require('dotenv').config();
+mongoose.connect(process.env.MONGO_URI);
 
-mongoose.connect("mongodb+srv://palaksharma100706_db_user:Palak1017@cluster0.vhez2mt.mongodb.net/NewVideos")
-    .then(() => {
-        console.log("✅ Connected to MongoDB successfully");
-    })
-    .catch((err) => {
-        console.error("❌ MongoDB connection error:", err);
-    });
+
+// mongoose.connect("mongodb+srv://palaksharma100706_db_user:Palak1017@cluster0.vhez2mt.mongodb.net/NewVideos")
+//     .then(() => {
+//         console.log("✅ Connected to MongoDB successfully");
+//     })
+//     .catch((err) => {
+//         console.error("❌ MongoDB connection error:", err);
+//     });
 
 const videoSchema = new mongoose.Schema({
     lessonId: {
