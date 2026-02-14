@@ -10,13 +10,7 @@ require('dotenv').config();
 mongoose.connect(process.env.MONGO_URI);
 
 
-// mongoose.connect("mongodb+srv://palaksharma100706_db_user:Palak1017@cluster0.vhez2mt.mongodb.net/NewVideos")
-//     .then(() => {
-//         console.log("✅ Connected to MongoDB successfully");
-//     })
-//     .catch((err) => {
-//         console.error("❌ MongoDB connection error:", err);
-//     });
+
 
 const videoSchema = new mongoose.Schema({
     lessonId: {
